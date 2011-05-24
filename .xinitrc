@@ -32,8 +32,8 @@ xscreensaver -no-splash &
 # Set cursor to pointer (otherwise, it is an X)
 xsetroot -curcor_name left_ptr
 
-# Start the xrxvt Daemon for speed
-urxtd -q -f -o &
+# Start the urxvt Daemon for speed
+urxvtd -q -f -o &
 
 
 # exec gnome-session
