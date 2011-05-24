@@ -26,8 +26,15 @@ xcompmgr -c -f &
 # Run the tint2 panel
 (sleep 2 && tint2) &
 
+# Set up XScreensaver
+xscreensaver -no-splash &
+
 # Set cursor to pointer (otherwise, it is an X)
 xsetroot -curcor_name left_ptr
+
+# Start the xrxvt Daemon for speed
+urxtd -q -f -o &
+
 
 # exec gnome-session
 # exec startkde

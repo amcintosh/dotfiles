@@ -42,7 +42,7 @@ Xft.hintstyle: hintfull
 ! Generic Options
 URxvt*termName: rxvt-unicode
 URxvt*buffered: true
-URxvt*Geometry: 150x40
+URxvt*geometry: 90x30
 Urxvt*saveLines: 65534
 Urxvt*scrollTtyKeypress: true
 Urxvt*scrollTtyOutput: false
@@ -58,11 +58,12 @@ URxvt*background: rgba:2222/2222/2222/dddd
 
 !True Transparency
 URxvt*depth: 32
-!transparent=0000 opaque=ffff
+!transparent=ffff opaque=0000
+URxvt.background: rgba:0000/0000/0000/cccc
 
 !False tranparency
-URxvt.transparent: true
-URxvt.shading: 35
+!URxvt.transparent: true
+!URxvt.shading: 35
 
 URxvt*scrollBar: false
 URxvt.secondaryScroll: true
@@ -77,7 +78,7 @@ URxvt*matcher.button: 1
 ! }}}
 
 ! Xterm {{{
-xterm*Geometry: 80x30
+xterm*geometry: 80x30
 xterm*foreground: #909090
 xterm*background: #303030
 xterm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
