@@ -17,6 +17,7 @@ if [ -f /etc/bash_completion ]; then
    . /etc/bash_completion
 fi
 
+export PATH=$PATH:~/bin
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
