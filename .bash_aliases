@@ -10,6 +10,16 @@ alias ping='ping -c 5'
 #Set keyboard controls on
 alias mpg123='mpg123 -C'
 
+#Alias to use dev todo.txt rather than todo.txt
+alias todotest='/home/andrew/work/todo.txt-cli/todo.sh -d /home/andrew/work/todo.txt-cli/todo.cfg'
+
+function t() {
+   if [ $# -eq 0 ]; then
+      todo.sh -d ~/.todo.cfg ls
+   else
+      todo.sh -d ~/.todo.cfg $*
+   fi
+}
 
 extract () {
      if [ -f $1 ] ; then
