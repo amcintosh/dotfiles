@@ -10,11 +10,14 @@ set linebreak           " causes vim to not wrap text in the middle of a word
 set tabstop=4
 
 set nobackup		" do not keep a backup file, use versions instead
+set noswapfile
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 "set number              " Show lines numbers
 set incsearch		" do incremental searching
+
+set spell
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
