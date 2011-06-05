@@ -77,3 +77,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+filetype plugin on
+set ofu=syntaxcomplete#Complete

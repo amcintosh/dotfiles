@@ -1,59 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu>
 	<menu id="root-menu" label="OpenBox 3">
+		<item label="FireFox"> <action name="Execute">
+			<execute>firefox</execute>
+		</action></item>
+ 		<item label="Thunar File Manager"> <action name="Execute">
+			<execute>Thunar</execute>
+		</action> </item>
 		<menu id="2" label="Editors">
 			<item label="gedit"> <action name="Execute">
 				<execute>gedit</execute>
 			</action> </item>
-			<item label="Nano"> <action name="Execute">
-				<execute>xterm -e nano</execute>
-			</action> </item>
-			<item label="Vi"> <action name="Execute">
-				<execute>xterm -e vi</execute>
-			</action> </item>
 			<item label="Vim"> <action name="Execute">
-				<execute>xterm -e vim</execute>
+				<execute>urxvt -e vim</execute>
 			</action> </item>
-		</menu>
-		<menu id="18" label="Games">
-			<menu id="10" label="Arcade">
-				<item label="PacMan"> <action name="Execute">
-					<execute>pacman</execute>
-				</action> </item>
-			</menu>
 		</menu>
 		<menu id="7" label="Multimedia">
 			<item label="ALSA mixer"> <action name="Execute">
 				<execute>xterm -e alsamixer</execute>
 			</action> </item>
 		</menu>
-		<menu id="5" label="Network">
-			<item label="Avahi SSH Server Browser"> <action name="Execute">
-				<execute>bssh</execute>
-			</action> </item>
-			<item label="Avahi VNC Server Browser"> <action name="Execute">
-				<execute>bvnc</execute>
-			</action> </item>
-			<item label="FireFox"> <action name="Execute">
-				<execute>firefox</execute>
-			</action> </item>
-			<item label="Mail"> <action name="Execute">
-				<execute>xterm -e mail</execute>
-			</action> </item>
-			<item label="Mail Reader"> <action name="Execute">
-				<execute>exo-open --launch MailReader</execute>
-			</action> </item>
-			<item label="TkVNC"> <action name="Execute">
-				<execute>xterm -e tkvnc</execute>
-			</action> </item>
-			<item label="Web Browser"> <action name="Execute">
-				<execute>exo-open --launch WebBrowser</execute>
-			</action> </item>
-		</menu>
 		<menu id="19" label="Shells">
-			<item label="Dash"> <action name="Execute">
-				<execute>xterm -e dash -i</execute>
-			</action> </item>
 			<item label="rxvt-unicode"> <action name="Execute">
 				<execute>urxvt</execute>
 			</action> </item>
@@ -62,6 +29,9 @@
 			</action> </item>
 			<item label="Xterm"> <action name="Execute">
 				<execute>xterm</execute>
+			</action> </item>
+			<item label="Dash"> <action name="Execute">
+				<execute>xterm -e dash -i</execute>
 			</action> </item>
 		</menu>
 		<menu id="37" label="System">
@@ -73,6 +43,12 @@
 					<item label="Preferred Applications"> <action name="Execute">
 						<execute>exo-preferred-applications</execute>
 					</action> </item>
+					<item label="Removable Drives and Media"> <action name="Execute">
+						<execute>thunar-volman-settings</execute>
+					</action> </item>
+					<item label="Screensaver"> <action name="Execute">
+						<execute>xscreensaver-demo</execute>
+					</action> </item>
 				</menu>
 				<item label="Openbox Configuration Manager"> <action name="Execute">
 					<execute>obconf</execute>
@@ -81,52 +57,28 @@
 					<execute>tint2conf</execute>
 				</action> </item>
 			</menu>
-			<item label="Avahi Zeroconf Browser"> <action name="Execute">
-				<execute>avahi-discover</execute>
-			</action> </item>
 			<item label="Bulk Rename"> <action name="Execute">
 				<execute>/usr/lib/Thunar/ThunarBulkRename</execute>
 			</action> </item>
-			<item label="pstree"> <action name="Execute">
-				<execute>xterm -e /usr/bin/pstree.x11</execute>
-			</action> </item>
-			<item label="pstree"> <action name="Execute">
-				<execute>xterm -e pstree</execute>
-			</action> </item>
-			<item label="pstree"> <action name="Execute">
-				<execute>xterm -e pstree.x11</execute>
-			</action> </item>
-			<item label="Top"> <action name="Execute">
-				<execute>xterm -e top</execute>
-			</action> </item>
 		</menu>
 		<menu id="38" label="Utilities">
-			<item label="File Manager"> <action name="Execute">
-				<execute>exo-open --launch FileManager</execute>
+			<item label="Activate ScreenSaver (Random)"> <action name="Execute">
+				<execute>xscreensaver-command -activate</execute>
 			</action> </item>
-			<item label="Info"> <action name="Execute">
-				<execute>xterm -e info</execute>
+			<item label="Demo Screen Hacks"> <action name="Execute">
+				<execute>xscreensaver-command -demo</execute>
 			</action> </item>
-			<item label="Terminal Emulator"> <action name="Execute">
-				<execute>exo-open --launch TerminalEmulator</execute>
+			<item label="Disable XScreenSaver"> <action name="Execute">
+				<execute>xscreensaver-command -exit</execute>
 			</action> </item>
-			<item label="Xclock (analog)"> <action name="Execute">
-				<execute>xclock -analog</execute>
+			<item label="Enable XScreenSaver"> <action name="Execute">
+				<execute>xscreensaver</execute>
 			</action> </item>
-			<item label="Xclock (digital)"> <action name="Execute">
-				<execute>xclock -digital</execute>
+			<item label="ScreenSaver Preferences"> <action name="Execute">
+				<execute>xscreensaver-command -prefs</execute>
 			</action> </item>
-			<item label="Xclock (digital)"> <action name="Execute">
-				<execute>xclock -digital -update 1</execute>
-			</action> </item>
-			<item label="Xev"> <action name="Execute">
-				<execute>xterm -e xev</execute>
-			</action> </item>
-			<item label="Xrefresh"> <action name="Execute">
-				<execute>xrefresh</execute>
-			</action> </item>
-			<item label="Xsetroot"> <action name="Execute">
-				<execute>xsetroot</execute>
+			<item label="Xarchiver"> <action name="Execute">
+				<execute>xarchiver</execute>
 			</action> </item>
 		</menu>
 		<separator/>
