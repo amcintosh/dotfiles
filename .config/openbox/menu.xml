@@ -14,6 +14,9 @@
 			<item label="Vim"> <action name="Execute">
 				<execute>urxvt -e vim</execute>
 			</action> </item>
+			<item label="gVim"> <action name="Execute">
+				<execute>gvim</execute>
+			</action> </item>
 		</menu>
 		<menu id="7" label="Multimedia">
 			<item label="ALSA mixer"> <action name="Execute">
