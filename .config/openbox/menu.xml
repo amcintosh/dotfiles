@@ -4,7 +4,7 @@
 			<item label="FireFox" icon="/home/andrew/.config/openbox/icons/firefox.png"> <action name="Execute">
 			<execute>firefox</execute>
 		</action></item>
- 		<item label="Thunar File Manager"> <action name="Execute">
+		<item label="Thunar File Manager" icon="/home/andrew/.config/openbox/icons/thunar.png"> <action name="Execute">
 			<execute>Thunar</execute>
 		</action> </item>
 		<menu id="2" label="Editors">
@@ -14,7 +14,7 @@
 			<item label="Vim"> <action name="Execute">
 				<execute>urxvt -e vim</execute>
 			</action> </item>
-			<item label="gVim"> <action name="Execute">
+			<item label="gVim" icon="/home/andrew/.config/openbox/icons/gvim.png"> <action name="Execute">
 				<execute>gvim</execute>
 			</action> </item>
 		</menu>
@@ -27,7 +27,7 @@
 			<item label="rxvt-unicode"> <action name="Execute">
 				<execute>urxvt</execute>
 			</action> </item>
-			<item label="Thunar File Manager"> <action name="Execute">
+		    <item label="Thunar File Manager" icon="/home/andrew/.config/openbox/icons/thunar.png"> <action name="Execute">
 				<execute>Thunar</execute>
 			</action> </item>
 			<item label="Xterm"> <action name="Execute">
