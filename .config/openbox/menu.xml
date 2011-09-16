@@ -8,7 +8,7 @@
 			<execute>Thunar</execute>
 		</action> </item>
 		<menu id="2" label="Editors">
-			<item label="gedit"> <action name="Execute">
+				<item label="gedit" icon="/home/andrew/.config/openbox/icons/gedit.png"> <action name="Execute">
 				<execute>gedit</execute>
 			</action> </item>
 			<item label="Vim"> <action name="Execute">
@@ -24,16 +24,16 @@
 			</action> </item>
 		</menu>
 		<menu id="19" label="Shells">
-			<item label="rxvt-unicode"> <action name="Execute">
+				<item label="rxvt-unicode" icon="/home/andrew/.config/openbox/icons/term.png"> <action name="Execute">
 				<execute>urxvt</execute>
 			</action> </item>
 		    <item label="Thunar File Manager" icon="/home/andrew/.config/openbox/icons/thunar.png"> <action name="Execute">
 				<execute>Thunar</execute>
 			</action> </item>
-			<item label="Xterm"> <action name="Execute">
+			<item label="Xterm" icon="/home/andrew/.config/openbox/icons/term2.png"> <action name="Execute">
 				<execute>xterm</execute>
 			</action> </item>
-			<item label="Dash"> <action name="Execute">
+			<item label="Dash" icon="/home/andrew/.config/openbox/icons/term2.png"> <action name="Execute">
 				<execute>xterm -e dash -i</execute>
 			</action> </item>
 		</menu>
