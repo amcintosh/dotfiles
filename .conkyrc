@@ -40,7 +40,7 @@ Uptime $alignr${uptime}
 ${font Arial:bold:size=10}${color LightBlue2}PROCESSORS ${color DarkSlateGray}${hr 2}
 $font${color DimGray}
 CPU1 ${freq_g 1}Ghz ${cpu cpu0}% ${cpubar cpu0}
-
+CPU1 ${freq_g 1}Ghz ${cpu cpu1}% ${cpubar cpu0}
 
 ${font Arial:bold:size=10}${color LightBlue2}MEMORY ${color DarkSlateGray}${hr 2}
 $font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
