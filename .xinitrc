@@ -7,8 +7,6 @@
 
 xrdb -merge ~/.Xresources
 
-#feh --bg-scale ~/Pictures/space1.jpg
-
 # Ensure numlock is on
 numlockx &
 
@@ -17,11 +15,6 @@ dropboxd &
 
 # Re-enable Ctrl-Alt-Bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp &
-
-# Run X Compositing Manager
-#xcompmgr -c -f &
-
-#conky &
 
 # Run the tint2 panel
 (sleep 2 && tint2) &
