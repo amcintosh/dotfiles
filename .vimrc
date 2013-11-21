@@ -31,8 +31,20 @@ autocmd BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
-syntax on               
+syntax on
 set showmatch           " Flash matching brackets
+
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+	%s/\s\+$//e
+endfunction
+
+autocmd FileType python,java autocmd FileWritePre   * :call TrimWhiteSpace()
+autocmd FileType python,java autocmd FileAppendPre  * :call TrimWhiteSpace()
+autocmd FileType python,java autocmd FilterWritePre * :call TrimWhiteSpace()
+autocmd FileType python,java autocmd BufWritePre    * :call TrimWhiteSpace()
+
 
 filetype indent plugin on
 au FileType python setlocal expandtab softtabstop=4
