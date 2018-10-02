@@ -1,0 +1,23 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+export TERM=xterm-color
+export CLICOLOR=1
+
+HISTSIZE=5000
+HISTFILESIZE=10000
+shopt -s histappend
+
+# User specific aliases and functions
+alias ls='ls --color=auto'
+alias lsl='ls -lh'
+alias df='df -h'
+
+# Some helpful stuff
+alias ping='ping -c 5'
+
+alias hist="history | grep $1"
