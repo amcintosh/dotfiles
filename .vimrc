@@ -1,29 +1,55 @@
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Eighties
 
-set nocompatible        " Turn off struct Vi compatibility.
+" Turn off strict Vi compatibility.
+set nocompatible
 
+" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-                        " allow backspacing over everything in insert mode
-set linebreak           " causes vim to not wrap text in the middle of a word
+
+" Whitespace features
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
-set nowrap
+set smarttab
+set noeol
+set autoindent
 
-set nobackup		    " do not keep a backup file
+" set nowrap            " sometimes I prefer no wrap
+set linebreak           " do not wrap text in the middle of a word
+
+" Display line numbers and rulers.
+set number
+set ruler
+syntax on
+
+" Status bar
+set laststatus=2
+
+" Swap and backup
+set nobackup
 set noswapfile
-set history=50		    " keep 50 lines of command line history
-set ruler		        " show the cursor position all the time
-set showcmd		        " display incomplete commands
-"set number             " Show lines numbers
 
-set incsearch		    " do incremental searching as you type
+" Misc
+set encoding=utf-8
+set t_Co=256            " Use 256 colors
+set clipboard=unnamed   " Use the system clipboard
+set mouse=a             " In many terminal emulators the mouse works just fine, thus enable it.
+
+set history=50		      " keep 50 lines of command line history
+set showcmd		          " display incomplete commands
+set visualbell          " No sounds
+
+" Search
+set incsearch		        " do incremental searching as you type
 set ignorecase          " ignore case when pattern matching
 set smartcase           " check case when uppercase are used
 set hlsearch            " highlight search results
 
-set spell
+set showmatch           " Flash matching brackets
 
-set mouse=a             " In many terminal emulators the mouse works just fine, thus enable it.
+" Spell checking. configure the language and turn off spell checking.
+set spell spelllang=en_ca
+set nospell
 
 " Remember last position in file
 autocmd BufReadPost *
@@ -31,20 +57,33 @@ autocmd BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
-syntax on
-set showmatch           " Flash matching brackets
 
+" File types
+filetype indent plugin on
 
 " Removes trailing spaces
 function! TrimWhiteSpace()
-	%s/\s\+$//e
+  %s/\s\+$//e
 endfunction
 
-autocmd FileType python,java autocmd FileWritePre   * :call TrimWhiteSpace()
-autocmd FileType python,java autocmd FileAppendPre  * :call TrimWhiteSpace()
-autocmd FileType python,java autocmd FilterWritePre * :call TrimWhiteSpace()
-autocmd FileType python,java autocmd BufWritePre    * :call TrimWhiteSpace()
+" Trim whitespace
+:command Trim :call TrimWhiteSpace()
+
+autocmd BufWritePre * :call TrimWhiteSpace()
+"autocmd FileType yaml,python,java autocmd BufWritePre    * :call TrimWhiteSpace()
 
 
-filetype indent plugin on
-au FileType python setlocal expandtab softtabstop=4
+" python
+au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
+
+" make uses real tabs
+au FileType make setl noexpandtab
+
+" Highlight JSON & es6 like Javascript
+au BufNewFile,BufRead {*.json,*.es6} set ft=javascript
+
+" markdown settings
+au FileType markdown setl textwidth=80 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=80
+
+" Lektor uses custom file types, but markdown contents.
+au BufNewFile,BufRead {*.lr} set ft=markdown
