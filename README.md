@@ -14,3 +14,4 @@ Shared things
 
 - `.vimrc` and `.vim/`
 - `.screenrc`
+- `.config/starship.toml`

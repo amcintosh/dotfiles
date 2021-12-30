@@ -1,6 +1,11 @@
 PATH=$PATH:$HOME/bin 	# Add to PATH for scripting
 
+export BASH_SILENCE_DEPRECATION_WARNING=1  # Apple hates bash
+
 export CLICOLOR=1
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 #PS1="[\u@\h \w]\\$ "
 export PS1="\[$(tput setaf 1)\][\[$(tput setaf 2)\]\u\[$(tput setaf 5)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
@@ -28,6 +33,11 @@ alias more='less'
 alias ping='ping -c 5'
 
 alias hist="history | grep $1"
+alias black="~/projects/tools/linters/bin/black --diff -l 120 $1" # Black sux, so I rarely want ot run it, just see its suggestions
+alias black_fix="~/projects/tools/linters/bin/black -l 120 $1" # In case I actually want to run it
+alias pre-commit="~/projects/tools/pre-commit/bin/pre-commit"
+alias newvirtual="virtualenv -p python3.9 env"
+
 
 alias rainbow='yes "$(seq 231 -1 16)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .02; done'
 
@@ -71,5 +81,11 @@ extract () {
     fi
 }
 
+function goto_work_notes() {
+  cd "~/Library/Mobile Documents/com~apple~CloudDocs/work_notes/"
+}
+
 source ~/.profile
+eval $(thefuck --alias)
+eval "$(starship init bash)"
 

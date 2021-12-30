@@ -1,0 +1,99 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    #"docker_context",
+    "package",
+    "dotnet",
+    "elixir",
+    "elm",
+    "erlang",
+    "golang",
+    "haskell",
+    "java",
+    "julia",
+    "nim",
+    "nodejs",
+    "ocaml",
+    "php",
+    "purescript",
+    "python",
+    "ruby",
+    "rust",
+    "terraform",
+    "zig",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "crystal",
+    "custom",
+    "cmd_duration",
+    "line_break",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
+# Disable the package module, hiding it from the prompt completely
+#[package]
+#disabled = false
+
+[character]
+symbol = "$"
+
+[username]
+show_always = false
+style_user = "green"
+
+[hostname]
+ssh_only = true
+prefix = ""
+suffix = ""
+style = "bold blue"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "bold cyan"
+prefix = ":"
+
+[git_branch]
+symbol = ""
+truncation_length = 10
+truncation_symbol = "-"
+style = "bold purple"
+
+[git_status]
+stashed = ""
+modified = "~"
+style = "bold purple"
+
+[python]
+style = "105"
+
+[ruby]
+style = "red"
+
+[nodejs]
+disabled = false
+
+[terraform]
+disabled = true
+
+[line_break]
+disabled = false
+
+[cmd_duration]
+min_time = 60_000
