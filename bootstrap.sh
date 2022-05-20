@@ -2,7 +2,7 @@
 
 # Setup for github codespaces
 
-cp .bashrc.lite ~/.bashrc
+cp .bashrc.codespaces ~/.bashrc
 cp .bash_aliases ~/.bash_aliases
 cp .vimrc ~/.vimrc
 cp -r .vim ~/.vim
