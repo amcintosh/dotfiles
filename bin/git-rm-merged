@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+for branch in $(git branch --merged | grep -v '*')
+do
+    if [[ "$branch" != "master" ]] && [[ "$branch" != "main" ]]
+    then
+        git branch -d "$branch"
+    fi
+done

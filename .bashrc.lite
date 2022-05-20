@@ -10,7 +10,7 @@ PATH=$PATH:$HOME/bin # Add to PATH for scripting
 export TERM=xterm-color
 export CLICOLOR=1
 export EDITOR=vim
-export GREP_OPTIONS=' — color=auto'
+export GREP_OPTIONS=' —color=auto'
 
 export HISTCONTROL='erasedups'
 HISTSIZE=5000
