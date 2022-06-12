@@ -11,7 +11,7 @@ prompt_order = [
     "git_state",
     "git_status",
     "hg_branch",
-    #"docker_context",
+    "docker_context",
     "package",
     "dotnet",
     "elixir",
@@ -47,11 +47,12 @@ prompt_order = [
 ]
 
 # Disable the package module, hiding it from the prompt completely
-#[package]
-#disabled = false
+[package]
+disabled = true
 
 [character]
-symbol = "$"
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
 
 [username]
 show_always = false
@@ -64,10 +65,10 @@ suffix = ""
 style = "bold blue"
 
 [directory]
-truncation_length = 3
+truncation_length = 6
 truncate_to_repo = false
 style = "bold cyan"
-prefix = ":"
+#truncation_symbol = ".../"
 
 [git_branch]
 symbol = ""
@@ -83,14 +84,20 @@ style = "bold purple"
 [python]
 style = "105"
 
+[gcloud]
+disabled = true
+
 [ruby]
 style = "red"
 
 [nodejs]
+disabled = true
+
+[sudo]
 disabled = false
 
 [terraform]
-disabled = true
+disabled = false
 
 [line_break]
 disabled = false
