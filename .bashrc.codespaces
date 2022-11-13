@@ -22,6 +22,12 @@ elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+export GIT_EDITOR=vim
+
 # Codespaces bash prompt theme
 __bash_prompt() {
     local userpart='`export XIT=$? \
