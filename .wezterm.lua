@@ -6,6 +6,8 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
+config.initial_cols = 120
+
 -- For example, changing the color scheme:
 -- config.color_scheme = 'Blue Matrix'
 config.color_scheme = 'Abernathy'
@@ -20,7 +22,7 @@ config.color_scheme = 'Abernathy'
 
 config.font = wezterm.font('JetBrains Mono')
 
---config.window_background_opacity = 0.90
+config.window_background_opacity = 0.90
 
 -- and finally, return the configuration to wezterm
 return config
