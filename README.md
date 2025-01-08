@@ -1,5 +1,4 @@
-My dotfiles
-================
+# My dotfiles
 
 My various dotfiles in one place.
 

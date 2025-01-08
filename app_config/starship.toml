@@ -98,6 +98,9 @@ truncate_to_repo = false
 style = "bold cyan"
 #truncation_symbol = ".../"
 
+[docker_context]
+#disabled = true
+
 [git_branch]
 symbol = ""
 truncation_length = 10
@@ -115,11 +118,14 @@ style = "105"
 [gcloud]
 disabled = true
 
+[java]
+style = "bold red"
+
 [ruby]
 style = "red"
 
 [nodejs]
-disabled = true
+#disabled = true
 
 [sudo]
 disabled = false

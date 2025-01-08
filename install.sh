@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
+DOTFILES_DIR="$HOME/.dotfiles"
+
 OS_NAME=$(uname -s)
-OS_ARCH=$(uname -m)
 SYSTEM_NAME=$(uname -n)
 
 if [[ $OS_NAME == "Linux" ]] && [[ $SYSTEM_NAME == codespaces-* ]] ;
 then
     echo "Setting up for github codespaces"
-    cp .bashrc.codespaces ~/.bashrc
-    cp .bash_aliases ~/.bash_aliases
-    cp .vimrc ~/.vimrc
-    cp -r .vim ~/.vim
+    cp bashrc.codespaces $HOME/.bashrc
+    cp bash_aliases $HOME/.bash_aliases
+    cp app_config/vimrc $HOME/.vimrc
+    cp -r app_config/vim $HOME/.vim
 
     curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
@@ -19,3 +20,67 @@ then
 fi
 
 echo "Setting up for local machine"
+
+! [ -f $HOME/.bash_profile.bak ] && \
+    cp $HOME/.bash_profile $HOME/.bash_profile.bak && \
+    echo 'Backed up bash_profile to bash_profile.bak'
+
+if [[ $OS_NAME == "Darwin" ]] ;
+then
+    cp bash_profile.mac $HOME/.bash_profile
+    cp bash_aliases $HOME/.bash_aliases
+fi
+
+if [[ $OS_NAME == "Linux" ]] ;
+then
+    cp bashrc.ubuntu $HOME/.bashrc
+    cp bash_aliases $HOME/.bash_aliases
+fi
+
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
+
+for file in $HOME/.dotfiles/config/*
+do
+    basefile=`basename $file`
+    if [ -f "$HOME/.$basefile" ];
+    then
+        ! [ -f "$HOME/.$basefile.bak" ] && \
+            cp "$HOME/.$basefile" "$HOME/.$basefile.bak" && \
+            echo "Backed up existing .$basefile to .$basefile.bak"
+    fi
+    if ! [ "$file" == '.' ] && ! [ "$file" == '..' ]; then
+        rm "$HOME/.$basefile"
+        ln -s $file "$HOME/.$basefile"
+        echo " - Linked $basefile"
+    fi
+done
+
+# Create ~/.config as a few things will end up there.
+mkdir -p $HOME/.config
+
+# Clone zsh autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh-autosuggestions
+
+
+##
+# Install other config files that don't just live in ~/
+##
+
+# vim
+ln -s "$DOTFILES_DIR/app_config/vimrc" "$HOME/.vimrc"
+ln -s "$DOTFILES_DIR/app_config/vim" "$HOME/.vim"
+
+# ssh config
+if [ -f "$HOME/.ssh/config" ];
+then
+    cp "$HOME/.ssh/config" "$HOME/.ssh/config.bak"
+    echo "Backed up existing ssh/config file."
+fi
+rm "$HOME/ssh/config"
+ln -s "$DOTFILES_DIR/app_config/ssh" "$HOME/.ssh/config"
+echo " - Linked ~/.ssh/config"
+
+# starship
+ln -s "$DOTFILES_DIR/app_config/starship.toml" "$HOME/.config/starship.toml"
+echo " - Linked ~/.config/starship.toml"
