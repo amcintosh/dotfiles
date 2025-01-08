@@ -1,0 +1,20 @@
+Host *
+  UseKeychain yes
+  IgnoreUnknown UseKeychain
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host amcintosh.net
+  User andrew
+
+Host dev.amcintosh.net
+  User andrew
+  Port 2222
+
+Host pi
+  HostName 192.168.0.16
+  User andrew
+
+Host tacitus
+  HostName 192.168.0.169
+  User andrew

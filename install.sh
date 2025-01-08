@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+if [ $1 == "intuit" ] || [ $1 == "work" ] ;
+then
+  echo "Setup 'intuit'"
+  EMAIL='andrew_mcintosh@intuit.com'
+  SIGNINGKEY='3C02F195081B7DC9'
+else
+  echo "Defaulting to 'personal'"
+  EMAIL='nacho.vonkickbutt@gmail.com'
+  SIGNINGKEY='267C9BAA36799D36'
+fi
 
 DOTFILES_DIR="$HOME/.dotfiles"
 
@@ -21,6 +31,10 @@ fi
 
 echo "Setting up for local machine"
 
+##
+# Setup old bash things
+##
+
 ! [ -f $HOME/.bash_profile.bak ] && \
     cp $HOME/.bash_profile $HOME/.bash_profile.bak && \
     echo 'Backed up bash_profile to bash_profile.bak'
@@ -37,8 +51,22 @@ then
     cp bash_aliases $HOME/.bash_aliases
 fi
 
+##
+# Setup zsh
+##
+
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
+
+# Git config
+if [[ $OS_NAME == "Darwin" ]] ;
+then
+    sed -i '' "s/EMAIL/$EMAIL/g" "$DOTFILES_DIR/config/gitconfig"
+    sed -i '' "s/SIGNINGKEY/$SIGNINGKEY/g" "$DOTFILES_DIR/config/gitconfig"
+else
+    sed -i "s/EMAIL/$EMAIL/g" "$DOTFILES_DIR/config/gitconfig"
+    sed -i "s/SIGNINGKEY/$SIGNINGKEY/g" "$DOTFILES_DIR/config/gitconfig"
+fi
 
 for file in $HOME/.dotfiles/config/*
 do
