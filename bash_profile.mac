@@ -46,7 +46,7 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 ## FUNCTIONS ##
 
 function goto_work_notes() {
-  cd "~/Library/Mobile Documents/com~apple~CloudDocs/work_notes/"
+  cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/work_notes/
 }
 
 source ~/.profile
