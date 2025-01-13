@@ -67,6 +67,10 @@ else
     sed -i "s/EMAIL/$EMAIL/g" "$DOTFILES_DIR/config/gitconfig"
     sed -i "s/SIGNINGKEY/$SIGNINGKEY/g" "$DOTFILES_DIR/config/gitconfig"
 fi
+mkdir -p git_completion
+curl -o git_completion/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o git_completion/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+
 
 for file in $HOME/.dotfiles/config/*
 do
