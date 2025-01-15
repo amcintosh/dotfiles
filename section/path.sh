@@ -8,6 +8,13 @@ if [[ -d "$BREW_PREFIX/opt/python/libexec/bin" ]]; then
     PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
 fi
 
+# nvm in homebrew
+if [[ -d "$BREW_PREFIX/opt/nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$BREW_PREFIX/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
 # Binaries in home directory
 if [[ -d "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
