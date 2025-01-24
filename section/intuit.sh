@@ -12,5 +12,7 @@ then
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
 
-    alias notion="$HOME/work/tools/notion/node_modules/.bin/notion-cli"
+    # A few tools
+    alias kanban="$HOME/Personal/kanban/bin/kanban"
+    alias notion="$HOME/Personal/notion/node_modules/.bin/notion-cli"
 fi

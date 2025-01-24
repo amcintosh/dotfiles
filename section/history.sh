@@ -24,3 +24,7 @@ setopt HIST_REDUCE_BLANKS
 
 # Enable prompt substitutions
 setopt prompt_subst
+
+hist() {
+    fc -lm "*$@*" 1
+}
