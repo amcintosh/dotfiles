@@ -1,2 +1,3 @@
 git_completion/
+config/backup-env.sh
 section/secrets.sh
