@@ -1,3 +1,4 @@
 git_completion/
 config/backup-env.sh
+config/gitconfig
 section/secrets.sh

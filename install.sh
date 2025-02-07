@@ -59,6 +59,7 @@ rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
 # Git config
+cp $DOTFILES_DIR/config/gitconfig.tmpl $DOTFILES_DIR/config/gitconfig
 if [[ $OS_NAME == "Darwin" ]] ;
 then
     sed -i '' "s/EMAIL/$EMAIL/g" "$DOTFILES_DIR/config/gitconfig"
@@ -81,7 +82,7 @@ do
             cp "$HOME/.$basefile" "$HOME/.$basefile.bak" && \
             echo "Backed up existing .$basefile to .$basefile.bak"
     fi
-    if ! [ "$file" == '.' ] && ! [ "$file" == '..' ]; then
+    if ! [ "$file" == '.' ] && ! [ "$file" == '..' ] && ! [[ "$file" == *.tmpl ]]; then
         rm "$HOME/.$basefile"
         ln -s $file "$HOME/.$basefile"
         echo " - Linked $basefile"
