@@ -15,6 +15,18 @@ if [[ -d "$BREW_PREFIX/opt/nvm" ]]; then
     [ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+# Ruby in homebrew
+if [[ -d "$BREW_PREFIX/opt/ruby/bin" ]]; then
+    PATH="$BREW_PREFIX/opt/ruby/bin:$PATH"
+    GEM_DIR=`gem environment gemdir`
+    PATH="$GEM_DIR/bin:$PATH"
+fi
+
+# Rancher Desktop
+if [[ -d "$HOME/.rd/bin" ]]; then
+    PATH="$HOME/.rd/bin:$PATH"
+fi
+
 # Binaries in home directory
 if [[ -d "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"

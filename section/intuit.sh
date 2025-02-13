@@ -3,14 +3,11 @@ then
 
     # Maven version used by TTO
     export M1_HOME="/usr/local/Cellar/maven/3.9.1"
-    PATH="${M1_HOME}/bin:${PATH}"
-    export PATH
-
-    # Rancher Desktop
-    export PATH="$HOME/.rd/bin:$PATH"
+    export PATH="${M1_HOME}/bin:${PATH}"
 
     # TTO Tomcat
-    export CATALINA_HOME=/usr/local/intuit_apache-tomcat
+    export JAVA_HOME=`/usr/libexec/java_home -v 11`
+    export CATALINA_HOME="/usr/local/intuit_apache-tomcat"
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
 
