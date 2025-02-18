@@ -22,11 +22,6 @@ if [[ -d "$BREW_PREFIX/opt/ruby/bin" ]]; then
     PATH="$GEM_DIR/bin:$PATH"
 fi
 
-# Rancher Desktop
-if [[ -d "$HOME/.rd/bin" ]]; then
-    PATH="$HOME/.rd/bin:$PATH"
-fi
-
 # Binaries in home directory
 if [[ -d "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
