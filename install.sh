@@ -100,6 +100,12 @@ git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $HOME/.conf
 # Install other config files that don't just live in ~/
 ##
 
+# Mac simlink to iCloud drive
+if [[ $OS_NAME == "Darwin" ]] ;
+then
+    ln -s $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs $HOME/iCloud
+fi
+
 # vim
 ln -s "$DOTFILES_DIR/app_config/vimrc" "$HOME/.vimrc"
 ln -s "$DOTFILES_DIR/app_config/vim" "$HOME/.vim"
