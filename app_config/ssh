@@ -1,3 +1,5 @@
+Include config_intuit
+
 Host *
   UseKeychain yes
   IgnoreUnknown UseKeychain
