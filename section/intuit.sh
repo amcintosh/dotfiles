@@ -16,4 +16,24 @@ then
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias notion="$HOME/Personal/notion/node_modules/.bin/notion-cli"
 
+    alias yamlval="$HOME/work/tools/yaml-validation/bin/python -c 'import yaml, sys; print(yaml.safe_load(sys.stdin))' < $1"
+
+    # Kubectl for IKS
+    function switchenv {
+        APP=$1;
+        ENV=$2;
+        SERVICE="service"
+
+        if [[ $APP == "xmltrans" ]]; then
+            THE_APP="xmltransform"
+        elif [[ $APP == "tto24" ]]; then
+            THE_APP="turbotaxonlinety24"
+            SERVICE=""
+        else
+            THE_APP=$APP
+        fi
+
+        export KUBECONFIG="${HOME}/.kube/developer@canadatax-${THE_APP}${SERVICE}-usw2-${ENV}"
+    }
+
 fi
