@@ -22,10 +22,22 @@ then
     function switchenv {
         APP=$1;
         ENV=$2;
+        REGION="usw2"
         SERVICE="service"
 
-        if [[ $APP == "xmltrans" ]]; then
+        if [[ $ENV == "prod" ]] || [[ $ENV == "prd" ]]; then
+            ENV="prd"
+            REGION="use2"
+        elif [[ $ENV == "pref" ]] || [[ $ENV == "prf" ]]; then
+            ENV="prf"
+            REGION="use2"
+        fi
+
+        if [[ $APP == "xmltrans" ]] || [[ $APP == "xml" ]]; then
             THE_APP="xmltransform"
+        elif [[ $APP == "bi" ]]; then
+            THE_APP="turbotaxonlineanalytics"
+            SERVICE=""
         elif [[ $APP == "tto24" ]]; then
             THE_APP="turbotaxonlinety24"
             SERVICE=""
@@ -33,7 +45,7 @@ then
             THE_APP=$APP
         fi
 
-        export KUBECONFIG="${HOME}/.kube/developer@canadatax-${THE_APP}${SERVICE}-usw2-${ENV}"
+        export KUBECONFIG="${HOME}/.kube/developer@canadatax-${THE_APP}${SERVICE}-${REGION}-${ENV}"
     }
 
 fi
