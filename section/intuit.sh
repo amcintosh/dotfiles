@@ -6,7 +6,7 @@ then
     export PATH="${M1_HOME}/bin:${PATH}"
 
     # TTO Tomcat
-    export JAVA_HOME=`/usr/libexec/java_home -v 11`
+    export JAVA_HOME=`/usr/libexec/java_home -v 21`
     export CATALINA_HOME="/usr/local/intuit_apache-tomcat"
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
@@ -15,7 +15,9 @@ then
     alias what="$HOME/work/tools/what/node_modules/.bin/what-cli"
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias notion="$HOME/Personal/notion/node_modules/.bin/notion-cli"
+    alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
 
+    alias tto_format="mvn com.spotify.fmt:fmt-maven-plugin:format"
     alias yamlval="$HOME/work/tools/yaml-validation/bin/python -c 'import yaml, sys; print(yaml.safe_load(sys.stdin))' < $1"
 
     # Kubectl for IKS
@@ -45,6 +47,7 @@ then
             THE_APP=$APP
         fi
 
+        cp "${HOME}/.kube/developer@canadatax-${THE_APP}${SERVICE}-${REGION}-${ENV}" "${HOME}/.kube/config"
         export KUBECONFIG="${HOME}/.kube/developer@canadatax-${THE_APP}${SERVICE}-${REGION}-${ENV}"
     }
 
