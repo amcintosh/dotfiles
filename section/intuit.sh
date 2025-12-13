@@ -6,7 +6,7 @@ then
     export PATH="${M1_HOME}/bin:${PATH}"
 
     # TTO Tomcat
-    export JAVA_HOME=`/usr/libexec/java_home -v 21`
+    export JAVA_HOME=`/usr/libexec/java_home -v 25`
     export CATALINA_HOME="/usr/local/intuit_apache-tomcat"
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
@@ -42,6 +42,9 @@ then
             SERVICE=""
         elif [[ $APP == "tto24" ]]; then
             THE_APP="turbotaxonlinety24"
+            SERVICE=""
+        elif [[ $APP == "tto25" ]]; then
+            THE_APP="turbotaxonlinety25"
             SERVICE=""
         else
             THE_APP=$APP
