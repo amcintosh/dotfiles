@@ -1,0 +1,6 @@
+#!/bin/bash
+docker rmi `docker images -q`
+
+if [[ -d "/opt/podman" ]]; then
+    podman rmi `podman images -q`
+fi
