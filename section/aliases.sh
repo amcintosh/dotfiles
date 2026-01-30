@@ -17,3 +17,6 @@ if [[ "$OS_NAME" =  "Darwin" ]]; then
     # OSX quicklook
     alias look="qlmanage -p"
 fi
+
+# Silly gen-z
+alias vibes="git status"

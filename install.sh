@@ -35,6 +35,7 @@ echo "Setting up for local machine"
 # Setup old bash things
 ##
 
+[ -f $HOME/.bash_profile ] && \
 ! [ -f $HOME/.bash_profile.bak ] && \
     cp $HOME/.bash_profile $HOME/.bash_profile.bak && \
     echo 'Backed up bash_profile to bash_profile.bak'
