@@ -40,10 +40,10 @@ then
         elif [[ $APP == "bi" ]]; then
             THE_APP="turbotaxonlineanalytics"
             SERVICE=""
-        elif [[ $APP == "tto24" ]]; then
+        elif [[ $APP == "tto24" ]] || [[ $APP == "ty24" ]]; then
             THE_APP="turbotaxonlinety24"
             SERVICE=""
-        elif [[ $APP == "tto25" ]]; then
+        elif [[ $APP == "tto25" ]] || [[ $APP == "ty25" ]]; then
             THE_APP="turbotaxonlinety25"
             SERVICE=""
         else
