@@ -18,5 +18,7 @@ if [[ "$OS_NAME" =  "Darwin" ]]; then
     alias look="qlmanage -p"
 fi
 
+alias kanban="$HOME/work/tools/kanban/env/bin/kanban"
+
 # Silly gen-z
 alias vibes="git status"
