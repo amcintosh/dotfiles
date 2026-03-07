@@ -17,6 +17,9 @@ then
     alias notion="$HOME/Personal/notion/node_modules/.bin/notion-cli"
     alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
 
+    export ATEXT_FILE=$(ls -t "$HOME/Library/Mobile Documents/com~apple~CloudDocs/aText/"*.atext 2>/dev/null | head -1)
+    alias atext="$HOME/Personal/atext-viewer/.venv/bin/atext"
+
     alias tto_format="mvn com.spotify.fmt:fmt-maven-plugin:format"
     alias yamlval="$HOME/work/tools/yaml-validation/bin/python -c 'import yaml, sys; print(yaml.safe_load(sys.stdin))' < $1"
 
