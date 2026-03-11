@@ -11,14 +11,17 @@ then
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
 
-    # A few tools
-    alias what="$HOME/work/tools/what/node_modules/.bin/what-cli"
-    alias kanban="$HOME/Personal/kanban/bin/kanban"
-    alias notion="$HOME/Personal/notion/node_modules/.bin/notion-cli"
-    alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
+    # Use podman
+    alias docker=podman
 
+    # A few tools
     export ATEXT_FILE=$(ls -t "$HOME/Library/Mobile Documents/com~apple~CloudDocs/aText/"*.atext 2>/dev/null | head -1)
     alias atext="$HOME/Personal/atext-viewer/.venv/bin/atext"
+    alias kanban="$HOME/Personal/kanban/bin/kanban"
+    alias pager-duty="$HOME/work/tools/pager-duty-cli/.venv/bin/pager-duty"
+    alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
+    alias what="$HOME/work/tools/what/node_modules/.bin/what-cli"
+
 
     alias tto_format="mvn com.spotify.fmt:fmt-maven-plugin:format"
     alias yamlval="$HOME/work/tools/yaml-validation/bin/python -c 'import yaml, sys; print(yaml.safe_load(sys.stdin))' < $1"
