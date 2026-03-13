@@ -110,6 +110,7 @@ fi
 # vim
 ln -s "$DOTFILES_DIR/app_config/vimrc" "$HOME/.vimrc"
 ln -s "$DOTFILES_DIR/app_config/vim" "$HOME/.vim"
+echo " - Linked vim"
 
 # ssh config
 if [ -f "$HOME/.ssh/config" ];

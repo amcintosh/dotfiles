@@ -17,6 +17,8 @@ then
     # A few tools
     export ATEXT_FILE=$(ls -t "$HOME/Library/Mobile Documents/com~apple~CloudDocs/aText/"*.atext 2>/dev/null | head -1)
     alias atext="$HOME/Personal/atext-viewer/.venv/bin/atext"
+    alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit"
+    alias ccc="$HOME/work/tools/claude-commit/bin/claude-commit --commit"
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias pager-duty="$HOME/work/tools/pager-duty-cli/.venv/bin/pager-duty"
     alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
