@@ -5,6 +5,8 @@ then
     export M1_HOME="/usr/local/Cellar/maven/3.9.1"
     export PATH="${M1_HOME}/bin:${PATH}"
 
+    export NODE_EXTRA_CA_CERTS=$DOTFILES_DIR/ssl/netskope.pem
+
     # TTO Tomcat
     export JAVA_HOME=`/usr/libexec/java_home -v 25`
     export CATALINA_HOME="/usr/local/intuit_apache-tomcat"
@@ -17,13 +19,12 @@ then
     # A few tools
     export ATEXT_FILE=$(ls -t "$HOME/Library/Mobile Documents/com~apple~CloudDocs/aText/"*.atext 2>/dev/null | head -1)
     alias atext="$HOME/Personal/atext-viewer/.venv/bin/atext"
-    alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit"
+    alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit --copy"
     alias ccc="$HOME/work/tools/claude-commit/bin/claude-commit --commit"
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias pager-duty="$HOME/work/tools/pager-duty-cli/.venv/bin/pager-duty"
     alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
     alias what="$HOME/work/tools/what/node_modules/.bin/what-cli"
-
 
     alias tto_format="mvn com.spotify.fmt:fmt-maven-plugin:format"
     alias yamlval="$HOME/work/tools/yaml-validation/bin/python -c 'import yaml, sys; print(yaml.safe_load(sys.stdin))' < $1"
