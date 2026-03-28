@@ -19,6 +19,7 @@ if [[ "$OS_NAME" =  "Darwin" ]]; then
 fi
 
 alias kanban="$HOME/work/tools/kanban/env/bin/kanban"
+alias snip="$HOME/work/tools/snip/.venv/bin/snip"
 
 # Silly gen-z
 alias vibes="git status"
