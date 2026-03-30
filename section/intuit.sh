@@ -13,12 +13,7 @@ then
     alias starttomcat='$CATALINA_HOME/bin/catalina.sh start'
     alias cdtomcat='cd $CATALINA_HOME'
 
-    # Use podman
-    alias docker=podman
-
     # A few tools
-    export ATEXT_FILE=$(ls -t "$HOME/Library/Mobile Documents/com~apple~CloudDocs/aText/"*.atext 2>/dev/null | head -1)
-    alias atext="$HOME/Personal/atext-viewer/.venv/bin/atext"
     alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit --copy"
     alias ccc="$HOME/work/tools/claude-commit/bin/claude-commit --commit"
     alias kanban="$HOME/Personal/kanban/bin/kanban"
