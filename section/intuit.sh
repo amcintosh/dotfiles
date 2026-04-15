@@ -16,6 +16,7 @@ then
     # A few tools
     alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit --copy"
     alias ccc="$HOME/work/tools/claude-commit/bin/claude-commit --commit"
+    alias hsx="$HOME/Personal/hsx-cli/.venv/bin/hsx"
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias pager-duty="$HOME/work/tools/pager-duty-cli/.venv/bin/pager-duty"
     alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
