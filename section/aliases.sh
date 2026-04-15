@@ -18,6 +18,7 @@ if [[ "$OS_NAME" =  "Darwin" ]]; then
     alias look="qlmanage -p"
 fi
 
+alias hsx="$HOME/work/tools/hsx-cli/.venv/bin/hsx"
 alias kanban="$HOME/work/tools/kanban/env/bin/kanban"
 alias snip="$HOME/work/tools/snip/.venv/bin/snip"
 
