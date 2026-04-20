@@ -20,6 +20,7 @@ then
     alias kanban="$HOME/Personal/kanban/bin/kanban"
     alias pager-duty="$HOME/work/tools/pager-duty-cli/.venv/bin/pager-duty"
     alias pod-tools="$HOME/work/tools/pod-tools/.venv/bin/pod-tools"
+    alias snip="$HOME/Personal/snip/.venv/bin/snip"
     alias what="$HOME/work/tools/what/node_modules/.bin/what-cli"
 
     alias tto_format="mvn com.spotify.fmt:fmt-maven-plugin:format"

@@ -22,6 +22,11 @@ if [[ -d "$BREW_PREFIX/opt/ruby/bin" ]]; then
     PATH="$GEM_DIR/bin:$PATH"
 fi
 
+# Rust in homebrew
+if [[ -d "$BREW_PREFIX/opt/rustup/bin" ]]; then
+    PATH="$BREW_PREFIX/opt/rustup/bin:$PATH"
+fi
+
 # Binaries in home directory
 if [[ -d "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
