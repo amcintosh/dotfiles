@@ -20,6 +20,7 @@ then
     echo "Setting up for github codespaces"
     cp bashrc.codespaces $HOME/.bashrc
     cp bash_aliases $HOME/.bash_aliases
+    cp app_config/tmux.conf $HOME/.tmux.conf
     cp app_config/vimrc $HOME/.vimrc
     cp -r app_config/vim $HOME/.vim
 
@@ -125,3 +126,7 @@ echo " - Linked ~/.ssh/config"
 # starship
 ln -s "$DOTFILES_DIR/app_config/starship.toml" "$HOME/.config/starship.toml"
 echo " - Linked ~/.config/starship.toml"
+
+# Tmux
+ln -s "$DOTFILES_DIR/app_config/tmux.conf" "$HOME/.tmux.conf"
+echo " - Linked ~/.tmux.conf"
