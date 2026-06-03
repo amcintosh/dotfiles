@@ -16,6 +16,7 @@ then
     # A few tools
     alias claude-commit="$HOME/work/tools/claude-commit/bin/claude-commit --copy"
     alias ccc="$HOME/work/tools/claude-commit/bin/claude-commit --commit"
+    alias ct="$HOME/bin/claude_startup.sh"
     alias hsx="$HOME/Personal/hsx-cli/.venv/bin/hsx"
     alias kanban="$HOME/.local/bin/kanban-tui"
     alias onsite="$HOME/work/tools/onsite-calc/.venv/bin/onsite"
