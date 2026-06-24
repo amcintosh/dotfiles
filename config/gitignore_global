@@ -1,1 +1,6 @@
+.DS_Store
+
+*.pyc
+
 .qodo/
+**/.claude/settings.local.json
