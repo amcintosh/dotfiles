@@ -10,8 +10,8 @@
 	st = status
 	co = checkout
 	fix = "!f() { git commit --fixup $1; PREVIOUS=$(git log --pretty=%P -n 1 $1); GIT_SEQUENCE_EDITOR=touch git rebase -i --autosquash $PREVIOUS; }; f"
-	delete-squashed = "!f() { local targetBranch=${1:-main} && git checkout -q $targetBranch && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
-	delete-squashed-master = "!f() { local targetBranch=${1:-master} && git checkout -q $targetBranch && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
+	sync = "!f() { local targetBranch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@'); [ -z \"$targetBranch\" ] && { git rev-parse --verify main >/dev/null 2>&1 && targetBranch=main || targetBranch=master; }; git checkout $targetBranch && git pull origin $targetBranch; }; f"
+	delete-squashed = "!f() { local targetBranch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@'); [ -z \"$targetBranch\" ] && { git rev-parse --verify main >/dev/null 2>&1 && targetBranch=main || targetBranch=master; }; git checkout -q $targetBranch; git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d; git for-each-ref refs/heads/ \"--format=%(refname:short)\" | grep -v \"^${targetBranch}$\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && git cherry $targetBranch $(git commit-tree $(git rev-parse \"$branch^{tree}\") -p $mergeBase -m _) 2>/dev/null | grep -q \"^-\" && git branch -D $branch; done; }; f"
 
 [filter "hawser"]
 	clean = git hawser clean %f
